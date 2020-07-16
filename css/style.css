@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Questrial";
+    src: url("../assets/fonts/Questrial.ttf");
+}
+
+@font-face {
+    font-family: "LinuxLibertine";
+    src: url("../assets/fonts/LinuxLibertine.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../assets/fonts/OpenSans.ttf");
+}
+
+body {
+    min-width: 320px;
+}
+
+video, img {
+    width: 100%;
+}
+
+.button {
+    position: relative;
+    transition: all 0.2s;
+    padding: 5px 7px;
+    font-family: "Questrial";
+    text-transform: lowercase;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.button-ico-left svg {
+    padding-right: 5px;
+}
+
+.button-ico-right svg {
+    padding-left: 5px;
+}
+
+.button::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    border-radius: 100px;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.button:hover, .current-page {
+    filter: invert(1);
+}
+
+.button:hover {
+    margin: 0 10px;
+}
+
+.button:hover::before, .current-page::before {
+    opacity: 1;
+    width: 100%;
+}
+
+#site {
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    min-height: 100vh;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+    background-color: rgb(245, 245, 245);
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(white 5%, rgba(255, 255, 255, 0.75));
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+#header-content {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-content ul li {
+    display: inline-block;
+}
+
+#header-mobile-visible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header-mobile-visible #menu-expand {
+    visibility: hidden;
+} 
+
+#header-logo {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-family: "Questrial";
+    text-transform: lowercase;
+    font-size: 22px;
+}
+
+#header-logo svg {
+    margin-right: 10px;
+}
+
+#under-header-margin {
+    height: 0;
+}
+
+#fullscreen-img, #halfscreen-img {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../assets/img/index-bg.jpg");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#halfscreen-img {
+    height: 50vh;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+    background-image: url("../assets/img/page-3-img-half.jpg");
+    background-position: center;
+}
+
+#fullscreen-img-content, #halfscreen-img-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) invert(1);
+}
+
+#fullscreen-img-content p, #halfscreen-img-content p {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: "LinuxLibertine";
+}
+
+article {
+    width: 100%;
+}
+
+article:last-of-type {
+    padding-bottom: 20px;
+}
+
+.article-content {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 20px;
+}
+
+.article-content h2, .article-content h3 {
+    font-family: "LinuxLibertine";
+    margin: 20px 0;
+}
+
+figure {
+    width: 100%;
+    margin-top: 20px;
+}
+
+figcaption {
+    text-align: right;
+    font-family: "OpenSans";
+    font-size: smaller;
+    margin-top: initial;
+}
+
+figcaption a {
+    color: black;
+}
+
+article .article-content p {
+    font-family: "OpenSans";
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.initial-letter::first-letter {
+    font-weight: bold;
+    float: left;
+    font-size: 500%;
+    padding-right: 10px;
+    line-height: 52px;
+}
+
+.in-article-gmap {
+    width: 100%;
+    height: 50vh;
+}
+
+.in-article-three-columns {
+    display: flex;
+    align-content: space-between;
+}
+
+.in-article-three-columns .column {
+    padding-right: 25px;
+    max-width: 33%;
+} 
+
+.in-article-three-columns .column:last-of-type {
+    padding-right: unset;
+}
+
+.in-article-three-columns .column .column-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-position: center;
+    background-size: contain;
+}
+
+#todo-app {
+    width: 100%;
+}
+
+#todo-app-content {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 20px;
+}
+
+#todo-app-content .todo {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#todo-app-content .todo:last-of-type {
+    margin-bottom: 0;
+}
+
+#todo-app-content .todo input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    display: block;
+    margin-right: 10px;
+}
+
+footer {
+    width: 100%;
+    clear: both;
+}
+
+#footer-content {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 10px 20px;
+    text-align: right;
+    font-family: "OpenSans";
+    font-size: small;
+}
+
+#footer-content a {
+    color: black;
+}
+
+@media only screen and (max-width: 767px) {
+    .in-article-three-columns {
+        flex-direction: column;
+    }
+    
+    .in-article-three-columns .column {
+        padding-right: 0;
+        max-width: unset;
+    } 
+}
+
+@media only screen and (max-width: 619px) {
+    .button:hover {
+        margin: 0;
+    }
+    
+    #header-content {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+    .header-menu-closed ul {
+        visibility: hidden;
+        height: 0;
+        margin-top: 0px;
+    }
+
+    .header-menu-opened ul {
+        visibility: visible;
+        margin-top: 20px;
+    }
+
+    .header-menu-opened #menu-expand {
+        transform: rotate(180deg);
+    }
+
+    #header-content ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #header-content ul li:last-of-type {
+        margin-bottom: 0;
+    }
+
+    #header-mobile-visible {
+        width: 100%;
+    }
+    
+    #header-mobile-visible #menu-expand {
+        visibility: visible;
+    } 
+
+    #todo-app-content .todo input {
+        width: 55%;
+    }
+}
